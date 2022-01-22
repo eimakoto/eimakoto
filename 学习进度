@@ -1,1 +1,39 @@
+用c语言尝试是否能完成任务。
 
+
+
+# 打开文件
+
+#include<stdio.h>
+sruct shujuji
+{
+	char yuanip[10];
+	char mudiip[10];
+	int yuand;
+	int mudid;
+	int xyh;
+}shujuji;
+int main()
+{
+	FILE *fp;
+	char ch;
+	fp=fopen("D:\\学习用\\dataset\\data\\dataset1\\packet1.txt","r");
+	ch=getc(fp);
+	while(ch!=EOF){
+		ch=getc(fp);
+		putchar(ch);
+	}
+	fclose(fp);
+	return 0;
+ } 
+
+# 端口
+
+#include<stdio.h>
+int duankou(int a,int b,int m)
+{
+	if(m>=a&&<=b)
+	return 1;
+	else
+	return 0;
+}
