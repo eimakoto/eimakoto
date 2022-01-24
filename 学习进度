@@ -37,3 +37,69 @@ int duankou(int a,int b,int m)
 	else
 	return 0;
 }
+
+# 测试文件读入字符串
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+	FILE *fp; 
+	char ch,ch2[90];
+	fp=fopen("D:\\学习用\\dataset\\data\\dataset1\\rule1.txt","r");
+	ch=fgetc(fp);
+	if(ch==-1){
+		printf("error");
+		exit(0);
+	}
+	int i=0,j=0;
+	while(ch!=-1){
+		ch2[j]=ch;
+		ch=fgetc(fp);
+		j++;
+		if(ch=='\n'){
+			ch2[j]='\0';
+			printf("%s",ch2);
+			j=0;
+		}
+	}
+	return 0;
+}
+
+# 十进制转ip
+
+#include<stdio.h>
+#include<stdlib.h>
+int main() 
+{
+	FILE *ipp;
+	unsigned int a,i2,i,ip[40];
+	ipp=fopen("C:\\Users\\86137\\Desktop\\暂存IP.txt","w");
+	scanf("%ld",&a);
+	for(i2=1;a>0;i2++){
+		i=a%2;
+		ip[i2]=i;
+		if(i2%8==0){
+			i2++;
+		}
+		a=a/2;
+	}
+	int sum,i3;
+	char ch[3],ch2;
+	for(i2=1;i2<33;){
+		for(i3=128,sum=0;i3>=1;i3=i3/2,i2++){
+			sum+=ip[i2]*i3;
+		}
+		itoa(sum,ch,10);
+		for(i=0;i<3;i++){
+			ch2=ch[i];
+		    fputc(ch2,ipp);
+		}
+		if(i2!=33){
+			fputc('.',ipp);
+		}
+	}
+	fputc('\n',ipp);
+	fclose(ipp);
+	return 0;
+ } 
