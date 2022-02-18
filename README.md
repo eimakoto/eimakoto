@@ -1,5 +1,6 @@
 ### Hi there 👋
-
+#### 运行环境：Devc++
+#### 步骤：将代码中的文件指针改成自己电脑中存放文件的位置后即可运行
 <!--
 **eimakoto/eimakoto** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
